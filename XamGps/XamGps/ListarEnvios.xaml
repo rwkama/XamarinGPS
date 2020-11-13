@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamGps.ListarEnvios"
+             Title="OrdenesEnvioAsignadas">
+ 
+   
+   
+    <Grid>
+
+        <Image Source="img1.jpg" Aspect="AspectFill"></Image>
+        <StackLayout>
+            <Image Source="storedaway.png"/>
+            <Label Text="Ordenes de Envio Asignadas " Font="Bold" FontSize="Large"/>
+
+
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>-->
+           
+             
+                <ListView x:Name="listarOrdenes" HasUnevenRows="True" ItemSelected="ListarOrdenes_ItemSelected"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                        <ViewCell>
+                         
+                            <StackLayout Orientation="Horizontal">
+                               
+                                <StackLayout Orientation="Vertical">
+                                            <Label Text="ID de la Orden: " Font="Bold" />
+                                            <Label Text="{Binding IdOE}" Font="Bold" />
+                                           
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="ID de la Venta: " />
+                                                    <Label Text="{Binding VentaOE}" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Cedula del Cliente: " />
+                                                    <Label Text="{Binding ClienteOE}" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Cedula del Cadete: " />
+                                                    <Label Text="{Binding CadeteOE}" />
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="Fecha de la Orden: " />
+                                                    <Label Text="{Binding FechaOE}" />
+                                                </StackLayout>
+                                           
+                                  </StackLayout>
+                                
+           
+                            </StackLayout>
+                        </ViewCell >
+                            </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+       
+    <!--</Grid>-->
+        </StackLayout>
+    </Grid>
+   
+</ContentPage>
